@@ -1,10 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Vend+Sans:300,regular,500,600,700,300italic,italic,500italic,600italic,700italic");
+/* Подключаем Google Font */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   border: none;
+  font-family: system-ui;
 }
 
 .container {

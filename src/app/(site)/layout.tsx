@@ -1,8 +1,10 @@
 import Layout from "@/components/layout/Layout";
 import { type FC, ReactNode } from "react";
+
 interface ILay {
   children: ReactNode;
 }
+
 const layout: FC<ILay> = ({ children }) => {
   return <Layout>{children}</Layout>;
 };
