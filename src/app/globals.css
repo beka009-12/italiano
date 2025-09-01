@@ -17,5 +17,10 @@
 }
 
 body {
-  background-color: #fff;
+  background-color: #1b2026;
+  color: white;
+  font-family: sans-serif;
+  a {
+    color: white;
+  }
 }
