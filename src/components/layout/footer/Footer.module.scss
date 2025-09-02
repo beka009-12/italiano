@@ -1,0 +1,40 @@
+#Footer {
+  background: #121212;
+  padding-block: 15px;
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: clamp(1.125rem, 0.966rem + 0.8vw, 1.563rem);
+    border-bottom: 1px white solid;
+    h1 {
+      font-weight: 600;
+      font-size: clamp(1.125rem, 0.917rem + 1.04vw, 1.75rem);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(1.563rem, 1.222rem + 1.7vw, 2.5rem);
+      font-weight: 500;
+      font-size: clamp(0.75rem, 0.667rem + 0.42vw, 1rem);
+    }
+    .icons {
+      display: flex;
+      gap: 15px;
+      font-size: clamp(1rem, 0.813rem + 0.94vw, 1.563rem);
+    }
+  }
+  p {
+    padding-block: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.625rem, 0.58rem + 0.23vw, 0.75rem);
+    @media (max-width: 800px) {
+      padding-block: 15px;
+    }
+    @media (max-width: 750px) {
+      justify-content: start;
+    }
+  }
+}

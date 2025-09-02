@@ -1,17 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Silkscreen:regular,700);
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   border: none;
+  font-family: system-ui;
 }
 
 .container {
-  max-width: 1280px;
+  max-width: 1440px;
   width: 100%;
   margin: 0 auto;
+  padding-inline: 15px;
 }
 
 body {
-  background-color: #fff;
+  background-color: #1b2026;
+  color: white;
+  font-family: sans-serif;
+  a {
+    color: white;
+  }
 }
