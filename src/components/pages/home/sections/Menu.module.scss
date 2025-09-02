@@ -1,0 +1,156 @@
+@import url(https://fonts.googleapis.com/css?family=Shalimar:regular);
+
+.Menu {
+  color: #ffffff;
+  padding: 90px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 1rem;
+  }
+
+  .bestSellers {
+    font-size: clamp(2rem, 1.857rem + 0.71vw, 2.5rem);
+    font-weight: 400;
+    color: #e5e5e5;
+    font-family: "Shalimar";
+  }
+
+  .text {
+    max-width: 500px;
+  }
+
+  .title {
+    font-size: clamp(1.375rem, 0.964rem + 2.05vw, 2.813rem);
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    font-family: serif;
+    color: #ffffff;
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 0.929rem + 0.36vw, 1.25rem);
+    color: #cccccc;
+    line-height: 30px;
+  }
+
+  .images {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+  }
+
+  .image_content {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 570px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .imageWrapper {
+    flex: 0 0 auto;
+    width: 266px;
+    height: 282px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #1f1f1f;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .arrow {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+
+    svg {
+      width: 38px;
+      height: 38px;
+    }
+
+    &.left {
+      order: -1;
+    }
+
+    &.right {
+      order: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 50px 20px;
+
+    .content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .text {
+      max-width: 100%;
+      text-align: left;
+    }
+
+    .title {
+      font-size: 1.8rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .images {
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+    }
+
+    .image_content {
+      width: 100%;
+      gap: 15px;
+      overflow-x: scroll;
+      padding: 0 10px;
+      border-left: 1px solid rgba(128, 128, 128, 0.535);
+    }
+
+    .imageWrapper {
+      width: 90%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+    }
+
+    .arrow {
+      display: none;
+    }
+  }
+}
