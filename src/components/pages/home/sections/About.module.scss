@@ -1,0 +1,226 @@
+@import url(https://fonts.googleapis.com/css?family=Shalimar:regular);
+#about {
+  width: 100%;
+  min-height: 741px;
+  background: #1b2026;
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+    padding-block: 4rem;
+    .top {
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      gap: 8rem;
+      .topLeft {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: 528px;
+        gap: 1rem;
+        .title {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          .image {
+            margin-left: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            gap: 0.5em;
+            width: 3vw;
+            .one {
+              width: 43px;
+            }
+          }
+          h3 {
+            font-family: "Shalimar", cursive;
+            font-weight: 400;
+            font-style: Regular;
+            font-size: clamp(2rem, 1.857rem + 0.71vw, 2.5rem);
+            letter-spacing: 0%;
+            color: #ffffff;
+          }
+        }
+        h1 {
+          font-family: "Silk Serif";
+          font-weight: 600;
+          font-style: SemiBold;
+          font-size: clamp(1.375rem, 0.964rem + 2.05vw, 2.813rem);
+          line-height: 3rem;
+          letter-spacing: 1.1px;
+          color: #ffffff;
+          width: 528px;
+        }
+      }
+      p {
+        font-family: Spartan;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: clamp(1rem, 0.929rem + 0.36vw, 1.25rem);
+        line-height: 24px;
+        letter-spacing: 0%;
+        color: #ffffff;
+        width: 528px;
+      }
+    }
+    .bottom {
+      display: flex;
+      align-items: center;
+      gap: 8rem;
+      img {
+        width: 528px;
+        height: 303px;
+        border-radius: 2px;
+      }
+    }
+  }
+  @media (max-width: 1200px) {
+    .content {
+      gap: 2rem;
+      .top {
+        gap: 1rem;
+        p {
+          width: 40%;
+        }
+      }
+      .bottom {
+        gap: 4rem;
+        img {
+          width: 488px;
+          height: 279px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1100px) {
+    .content .top {
+      gap: 7.3rem;
+      .topLeft {
+        width: 368px;
+        .title {
+          .image {
+            margin-left: 20px;
+          }
+        }
+      }
+      p {
+        width: 38%;
+      }
+    }
+    .content .bottom {
+      img {
+        width: 422px;
+        height: 244px;
+      }
+    }
+  }
+  @media (max-width: 992px) {
+    .content {
+      .top {
+        gap: 2.2rem;
+        .topLeft {
+          width: 45%;
+        }
+        p {
+          width: 42%;
+        }
+      }
+      .bottom {
+        img {
+          height: 222px;
+        }
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .content {
+      .top {
+        gap: 4.8rem;
+        .topLeft .title .image {
+          margin-left: 32px;
+        }
+        .topLeft {
+          width: 298px;
+          margin-left: -30px;
+          h1 {
+            width: inherit;
+          }
+        }
+        p {
+          width: 40%;
+        }
+      }
+      .bottom {
+        gap: 2rem;
+        img {
+          width: 340px;
+          height: 180px;
+        }
+      }
+    }
+  }
+  @media (max-width: 576px) {
+    .content{
+        padding-bottom: 34px;
+    }
+    .content .top {
+      flex-direction: column;
+      align-items: start;
+      gap: 10px;
+      .title{
+        padding-left: 10px;
+      }
+      .topLeft {
+      padding-left: 60px;
+
+        h1 {
+          line-height: 40px;
+        }
+      }
+      p {
+        width: 80%;
+        padding-left: 30px;
+        margin-left: 0;
+      }
+    }
+    .content .bottom {
+      flex-direction: column;
+      img {
+        width: 95%;
+      }
+    }
+  }
+@media (max-width: 407px) {
+    .content {
+        padding-top: 20px;
+    }
+    .content .top{
+        .topLeft{
+            gap: 0;
+        }
+    }
+    .content .bottom{
+        img{
+            width: 344px;
+            height: 160px;
+        }
+    }
+}
+@media (max-width: 378px) {
+    .content .top .topLeft{
+        h1{
+            line-height: 26px;
+        }
+    }
+    .content .bottom{
+        img{
+            width: 322px;
+            height: 150px; 
+        }
+    }
+}
+}
