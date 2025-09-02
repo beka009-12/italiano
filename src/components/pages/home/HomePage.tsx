@@ -7,10 +7,10 @@ import About from "./sections/About";
 const HomePage = () => {
   return (
     <div>
-      <Menu />
-      <Main />
       <Welcome />
       <About/>
+      <Menu />
+      <Main />
     </div>
   );
 };
