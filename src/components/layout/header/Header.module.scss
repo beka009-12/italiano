@@ -1,6 +1,19 @@
-#Header {
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: #1e262f5f;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
   padding-block: 13px;
   border-bottom: 0.1px solid rgba(255, 255, 255, 0.139);
+
+  &.hidden {
+    transform: translateY(-100%);
+  }
+
   .content {
     display: flex;
     align-items: center;

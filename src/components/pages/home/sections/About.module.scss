@@ -2,6 +2,7 @@
 #about {
   width: 100%;
   min-height: 741px;
+  padding-block: 50px;
   background: #1b2026;
   .content {
     display: flex;
@@ -164,18 +165,18 @@
     }
   }
   @media (max-width: 576px) {
-    .content{
-        padding-bottom: 34px;
+    .content {
+      padding-bottom: 34px;
     }
     .content .top {
       flex-direction: column;
       align-items: start;
       gap: 10px;
-      .title{
+      .title {
         padding-left: 10px;
       }
       .topLeft {
-      padding-left: 60px;
+        padding-left: 60px;
 
         h1 {
           line-height: 40px;
@@ -194,33 +195,33 @@
       }
     }
   }
-@media (max-width: 407px) {
+  @media (max-width: 407px) {
     .content {
-        padding-top: 20px;
+      padding-top: 20px;
     }
-    .content .top{
-        .topLeft{
-            gap: 0;
-        }
+    .content .top {
+      .topLeft {
+        gap: 0;
+      }
     }
-    .content .bottom{
-        img{
-            width: 344px;
-            height: 160px;
-        }
+    .content .bottom {
+      img {
+        width: 344px;
+        height: 160px;
+      }
     }
-}
-@media (max-width: 378px) {
-    .content .top .topLeft{
-        h1{
-            line-height: 26px;
-        }
+  }
+  @media (max-width: 378px) {
+    .content .top .topLeft {
+      h1 {
+        line-height: 26px;
+      }
     }
-    .content .bottom{
-        img{
-            width: 322px;
-            height: 150px; 
-        }
+    .content .bottom {
+      img {
+        width: 322px;
+        height: 150px;
+      }
     }
-}
+  }
 }

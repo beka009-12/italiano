@@ -1,5 +1,5 @@
 "use client";
-import { useState, type FC } from "react";
+import { useEffect, useState, type FC } from "react";
 import scss from "./Header.module.scss";
 import Link from "next/link";
 import { IoSearchOutline } from "react-icons/io5";
@@ -7,13 +7,29 @@ import { useWindowSize } from "react-use";
 
 const Header: FC = () => {
   const { width } = useWindowSize();
-  // const [open, setOpen] = useState(false);
 
-  // const handleSub = () => {
-  //   setOpen(!open);
-  // };
+  const [hidden, setHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <header id={scss.Header}>
+    <header className={`${scss.Header} ${hidden ? scss.hidden : ""}`}>
       <div className="container">
         <div className={scss.content}>
           <h1>Restaurant</h1>
