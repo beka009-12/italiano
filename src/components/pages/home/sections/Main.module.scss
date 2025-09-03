@@ -67,6 +67,7 @@
       height: max-content;
       border: 1px solid #2f3a46;
       padding-block: 10px;
+      user-select: none;
 
       .category {
         color: #fff;
@@ -79,7 +80,6 @@
         position: relative;
         transition: all 0.2s ease;
         margin-bottom: 5px;
-        user-select: none;
 
         span {
           width: 84%;
@@ -92,26 +92,14 @@
         }
 
         &:hover {
-          background: #2a323b;
+          background: #ef272c;
+
           color: #fff;
         }
       }
-
       .active {
         background: #ef272c;
         color: #fff;
-
-        &::after {
-          content: "";
-          position: absolute;
-          right: -25px;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 50px;
-          height: 1px;
-          background: #ffffff;
-          border-radius: 2px;
-        }
       }
     }
 

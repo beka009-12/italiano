@@ -93,6 +93,7 @@
         display: none;
       }
       .hamburger {
+        user-select: none;
         display: block;
       }
     }
