@@ -33,7 +33,7 @@ const Welcome: FC = () => {
           <p>
             Classic steak & delicious with delightfully unexpenced twists.{" "}
             <br />
-            The Restaurant`s sunny decor was inspired by the diners
+            The Restaurants sunny decor was inspired by the diners
           </p>
           <Btn title="Reserve Your Table" />
           <div className={scss.bottom}>
@@ -43,7 +43,7 @@ const Welcome: FC = () => {
               <a>
                 <ImLocation2 />
               </a>
-              <h5>Rua da moeda 1g,1200-275,Portugal</h5>
+              <h5>Rua da moeda 1g 1200-275 Portugal</h5>
             </div>
             <div className={scss.bottomright}>
               <h4>Hotline</h4>
