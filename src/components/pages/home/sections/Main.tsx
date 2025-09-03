@@ -1,6 +1,10 @@
 "use client";
 import { useState, type FC } from "react";
 import scss from "./Main.module.scss";
+import Image from "next/image";
+import frame1 from "../../../../../public/Frame 10.svg";
+import frame2 from "../../../../../public/Frame 9.svg";
+import Btn from "@/components/utils/ui/btn/Btn";
 
 const categories = [
   { title: "Desserts" },
@@ -52,7 +56,21 @@ const Main: FC = () => {
   return (
     <section className={scss.Main}>
       <div className="container">
-        <div className={scss.text}></div>
+        <div className={scss.text}>
+          <div className={scss.title}>
+            <div className={scss.left}>
+              <Image src={frame1} alt="img" className={scss.one} />
+            </div>
+            <h3>Delicious</h3>
+            <div className={scss.right}>
+              <Image src={frame2} alt="img" className={scss.one} />
+            </div>
+          </div>
+          <h1>
+            Exceptional Quality. <br />
+            Delightfully Delicious
+          </h1>
+        </div>
         <div className={scss.content}>
           {/* Слева категории */}
           <div className={scss.contentLeft}>
@@ -69,7 +87,6 @@ const Main: FC = () => {
             ))}
           </div>
 
-          {/* Справа еда, максимум 5 */}
           <div className={scss.contentRight}>
             {foods.slice(0, 5).map((food, index) => (
               <div key={index} className={scss.context}>
@@ -86,6 +103,7 @@ const Main: FC = () => {
             ))}
           </div>
         </div>
+        <Btn title="View Full menu" />
       </div>
     </section>
   );

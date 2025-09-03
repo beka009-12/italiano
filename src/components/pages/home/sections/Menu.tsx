@@ -4,7 +4,7 @@ import scss from "./Menu.module.scss";
 import image1 from "../../../../../public/menuImages.png";
 import image2 from "../../../../../public/menuImage2.png";
 import Image from "next/image";
-import frame from "../../../../../public/Frame 10.png";
+import frame from "../../../../../public/Frame 10.svg";
 
 const images = [
   { url: image1 },

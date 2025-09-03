@@ -1,226 +1,164 @@
 @import url(https://fonts.googleapis.com/css?family=Shalimar:regular);
+
 #about {
+  padding-block: clamp(80px, 8vw, 120px);
+  max-width: 1264px;
+  margin: 0 auto;
   width: 100%;
-  min-height: 741px;
-  padding-block: 50px;
   background: #1b2026;
+  user-select: none;
+
   .content {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    gap: 3rem;
-    padding-block: 4rem;
+    align-items: center;
+    gap: clamp(2rem, 4vw, 3rem);
+    width: 100%;
+
     .top {
       display: flex;
-      align-items: end;
-      justify-content: center;
-      gap: 8rem;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+
       .topLeft {
         display: flex;
         flex-direction: column;
-        align-items: start;
-        width: 528px;
-        gap: 1rem;
+        width: clamp(280px, 40%, 528px);
+
+        .image {
+          .one {
+            width: clamp(3rem, 2.929rem + 0.36vw, 3.25rem);
+          }
+        }
+
         .title {
           display: flex;
           align-items: center;
+          margin-bottom: 20px;
           gap: 1rem;
-          .image {
-            margin-left: 6px;
-            display: flex;
-            flex-direction: column;
-            align-items: end;
-            gap: 0.5em;
-            width: 3vw;
-            .one {
-              width: 43px;
-            }
-          }
+
           h3 {
             font-family: "Shalimar", cursive;
             font-weight: 400;
-            font-style: Regular;
             font-size: clamp(2rem, 1.857rem + 0.71vw, 2.5rem);
-            letter-spacing: 0%;
             color: #ffffff;
           }
         }
+
         h1 {
           font-family: "Silk Serif";
           font-weight: 600;
-          font-style: SemiBold;
           font-size: clamp(1.375rem, 0.964rem + 2.05vw, 2.813rem);
-          line-height: 3rem;
-          letter-spacing: 1.1px;
+          line-height: clamp(2rem, 3.5vw, 3rem);
           color: #ffffff;
-          width: 528px;
+          margin: 0 0 20px 0;
+          width: 100%;
         }
       }
+
       p {
-        font-family: Spartan;
-        font-weight: 400;
-        font-style: Regular;
-        font-size: clamp(1rem, 0.929rem + 0.36vw, 1.25rem);
-        line-height: 24px;
-        letter-spacing: 0%;
-        color: #ffffff;
-        width: 528px;
+        font-size: clamp(0.95rem, 1.2vw, 1.25rem);
+        color: #cccccc;
+        line-height: 1.6;
+        width: clamp(280px, 45%, 528px);
       }
     }
+
     .bottom {
       display: flex;
-      align-items: center;
-      gap: 8rem;
-      img {
-        width: 528px;
-        height: 303px;
-        border-radius: 2px;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: clamp(2rem, 5vw, 8rem);
+      flex-wrap: wrap;
+
+      .imgWrapper {
+        position: relative;
+        width: clamp(280px, 45%, 528px);
+        height: clamp(200px, 25vw, 300px);
+
+        .imgText {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          color: #fff;
+          font-weight: 600;
+          font-size: clamp(1rem, 1.5vw, 1.5rem);
+          text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+          z-index: 2;
+        }
+
+        .bottomImg {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 4px;
+        }
       }
     }
   }
-  @media (max-width: 1200px) {
-    .content {
-      gap: 2rem;
-      .top {
-        gap: 1rem;
-        p {
-          width: 40%;
-        }
-      }
-      .bottom {
-        gap: 4rem;
-        img {
-          width: 488px;
-          height: 279px;
-        }
-      }
-    }
-  }
-  @media (max-width: 1100px) {
-    .content .top {
-      gap: 7.3rem;
-      .topLeft {
-        width: 368px;
-        .title {
-          .image {
-            margin-left: 20px;
-          }
-        }
-      }
-      p {
-        width: 38%;
-      }
-    }
-    .content .bottom {
-      img {
-        width: 422px;
-        height: 244px;
-      }
-    }
-  }
+
   @media (max-width: 992px) {
     .content {
       .top {
-        gap: 2.2rem;
+        flex-direction: column;
+        align-items: start;
+        text-align: start;
+
         .topLeft {
-          width: 45%;
+          align-items: start;
         }
+
         p {
-          width: 42%;
+          width: 90%;
         }
       }
+
       .bottom {
-        img {
-          height: 222px;
+        justify-content: center;
+        gap: 1.5rem;
+
+        .imgWrapper {
+          width: 80%;
+          height: 220px;
         }
       }
     }
   }
-  @media (max-width: 768px) {
-    .content {
-      .top {
-        gap: 4.8rem;
-        .topLeft .title .image {
-          margin-left: 32px;
-        }
-        .topLeft {
-          width: 298px;
-          margin-left: -30px;
-          h1 {
-            width: inherit;
-          }
-        }
-        p {
-          width: 40%;
-        }
-      }
-      .bottom {
-        gap: 2rem;
-        img {
-          width: 340px;
-          height: 180px;
-        }
-      }
-    }
-  }
+
+  /* --- Мобильные --- */
   @media (max-width: 576px) {
     .content {
-      padding-bottom: 34px;
-    }
-    .content .top {
-      flex-direction: column;
-      align-items: start;
-      gap: 10px;
-      .title {
-        padding-left: 10px;
-      }
-      .topLeft {
-        padding-left: 60px;
+      .top {
+        .topLeft {
+          width: 95%;
+        }
 
-        h1 {
-          line-height: 40px;
+        p {
+          width: 95%;
         }
       }
-      p {
-        width: 80%;
-        padding-left: 30px;
-        margin-left: 0;
-      }
-    }
-    .content .bottom {
-      flex-direction: column;
-      img {
-        width: 95%;
+
+      .bottom {
+        flex-direction: column;
+        align-items: center;
+
+        .imgWrapper {
+          width: 100%;
+          height: 280px;
+        }
       }
     }
   }
-  @media (max-width: 407px) {
+
+  @media (max-width: 400px) {
     .content {
-      padding-top: 20px;
-    }
-    .content .top {
-      .topLeft {
-        gap: 0;
+      .topLeft h1 {
+        line-height: 1.3;
       }
-    }
-    .content .bottom {
-      img {
-        width: 344px;
+
+      .bottom .imgWrapper {
         height: 160px;
-      }
-    }
-  }
-  @media (max-width: 378px) {
-    .content .top .topLeft {
-      h1 {
-        line-height: 26px;
-      }
-    }
-    .content .bottom {
-      img {
-        width: 322px;
-        height: 150px;
       }
     }
   }
