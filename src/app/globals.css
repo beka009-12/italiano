@@ -6,6 +6,7 @@
   text-decoration: none;
   border: none;
   font-family: system-ui;
+  user-select: none;
 }
 
 .container {
