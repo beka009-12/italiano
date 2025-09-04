@@ -1,6 +1,7 @@
 "use client";
 import { useState, type FC } from "react";
 import scss from "./Category.module.scss";
+import { useRouter } from "next/navigation";
 
 const categories = [
   { title: "Desserts" },
@@ -13,6 +14,7 @@ const categories = [
 
 const CategoryList: FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const router = useRouter();
 
   return (
     <div className={scss.contentLeft}>
@@ -24,7 +26,7 @@ const CategoryList: FC = () => {
           }`}
           onClick={() => setActiveIndex(index)}
         >
-          <span>{cat.title}</span>
+          <span onClick={() => router.push("/detail")}>{cat.title}</span>
         </div>
       ))}
     </div>
