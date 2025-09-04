@@ -1,49 +1,47 @@
 "use client";
-import { useState, type FC } from "react";
+import { type FC } from "react";
 import scss from "./Main.module.scss";
 import Image from "next/image";
 import frame1 from "../../../../../public/Frame 10.svg";
 import frame2 from "../../../../../public/Frame 9.svg";
 import Btn from "@/components/utils/ui/btn/Btn";
+import CategoryList from "@/components/utils/ui/Category";
+import { useRouter } from "next/navigation";
 
-const categories = [
-  { title: "Desserts" },
-  { title: "Hot Drinks" },
-  { title: "Cold Drinks" },
-  { title: "National Foods" },
-  { title: "Eastern cuisine" },
-  { title: "Fast foods" },
-];
-
-// данные для еды справа
 const foods = [
   {
+    id: 1,
     title: "Beer Brewery",
     price: "$24",
     description:
       "Lörem ipsum askstoppad defaktisk, logokemi. Diastat retos att endomatisk.",
   },
   {
+    id: 2,
     title: "Pizza Margherita",
     price: "$15",
     description: "Classic Italian pizza with mozzarella and fresh basil.",
   },
   {
+    id: 3,
     title: "Chicken Biryani",
     price: "$20",
     description: "Fragrant rice with spices and tender chicken pieces.",
   },
   {
+    id: 4,
     title: "Cheeseburger",
     price: "$12",
     description: "Juicy beef patty with cheddar, lettuce, and tomato.",
   },
   {
+    id: 5,
     title: "Tiramisu",
     price: "$10",
     description: "Traditional Italian dessert with mascarpone and coffee.",
   },
   {
+    id: 6,
     title: "Sushi Set",
     price: "$30",
     description: "Fresh salmon, tuna, and avocado rolls.",
@@ -51,8 +49,7 @@ const foods = [
 ];
 
 const Main: FC = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
+  const router = useRouter();
   return (
     <section className={scss.Main}>
       <div className="container">
@@ -73,23 +70,16 @@ const Main: FC = () => {
         </div>
         <div className={scss.content}>
           {/* Слева категории */}
-          <div className={scss.contentLeft}>
-            {categories.map((item, index) => (
-              <div
-                key={index}
-                className={`${scss.category} ${
-                  activeIndex === index ? scss.active : ""
-                }`}
-                onClick={() => setActiveIndex(index)}
-              >
-                <span>{item.title}</span>
-              </div>
-            ))}
+          <div className={scss.category}>
+            <CategoryList />
           </div>
-
           <div className={scss.contentRight}>
             {foods.slice(0, 5).map((food, index) => (
-              <div key={index} className={scss.context}>
+              <div
+                onClick={() => router.push("/detail")}
+                key={index}
+                className={scss.context}
+              >
                 <div className={scss.price}>
                   <span>{food.title}</span>
                   <span className={scss.line}></span>

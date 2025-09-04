@@ -9,7 +9,7 @@ interface ILay {
 
 const Layout: FC<ILay> = ({ children }) => {
   return (
-    <div id={scss.Layout}>
+    <div className={scss.Layout}>
       <Header />
       <main>{children}</main>
       <Footer />
