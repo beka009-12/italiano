@@ -1,0 +1,126 @@
+.Visit {
+  padding-block: 25px;
+  .content {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+
+    .left_visit {
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 25px;
+        h2 {
+          font-family: "Shalimar";
+          font-size: clamp(2rem, 1.818rem + 0.91vw, 2.5rem);
+          font-weight: 100;
+          letter-spacing: 1.5px;
+        }
+      }
+      h1 {
+        font-family: Silk Serif;
+        font-weight: 600;
+        font-style: SemiBold;
+        font-size: clamp(2.188rem, 1.733rem + 2.27vw, 3.438rem);
+        line-height: clamp(2.188rem, 1.733rem + 2.27vw, 3.438rem);
+      }
+      .your {
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        gap: 15px;
+        span {
+          color: #ef272c;
+          font-weight: 500;
+          font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+        }
+        p {
+          font-weight: 500;
+          font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+        }
+      }
+      .btn {
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 7px;
+          border: #ef272c 2px solid;
+          background: none;
+          font-size: clamp(0.625rem, 0.534rem + 0.45vw, 0.875rem);
+          padding: 5px 10px 8px;
+          color: white;
+          .icon_row {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    .right_visit {
+      background: #ef272c;
+      color: #1f2731;
+      max-width: clamp(21.875rem, 19.809rem + 10.33vw, 28.125rem);
+      width: 100%;
+      align-items: start;
+      padding: 30px;
+      .block {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        span {
+          font-weight: 500;
+          font-size: 24px;
+        }
+        .tell {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+        }
+        .icon {
+          font-size: 25px;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+      }
+      .map {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(17.5rem, 16.054rem + 7.23vw, 21.875rem);
+        height: clamp(12.5rem, 11.467rem + 5.17vw, 15.625rem);
+      }
+    }
+  }
+}
+@media (max-width: 700px) {
+  .Visit {
+    .content {
+      flex-direction: column;
+      .right_visit {
+        max-width: 600px;
+        width: 100%;
+        padding: 0px;
+        background: none;
+        .block {
+          display: none;
+        }
+
+        .map {
+          margin-top: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 350px;
+         
+        }
+      }
+    }
+  }
+}
