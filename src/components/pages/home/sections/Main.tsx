@@ -24,7 +24,7 @@ const foods = [
   },
   {
     id: 3,
-    title: "Chicken Biryani",
+    title: "Chicken Bryani",
     price: "$20",
     description: "Fragrant rice with spices and tender chicken pieces.",
   },
