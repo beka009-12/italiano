@@ -3,10 +3,12 @@ import { useState, useEffect, type FC } from "react";
 import scss from "./Header.module.scss";
 import Link from "next/link";
 import { IoSearchOutline } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 
 const Header: FC = () => {
   const [mounted, setMounted] = useState(false);
   const [width, setWidth] = useState<number>(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -17,7 +19,7 @@ const Header: FC = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  if (!mounted) return null; // Не рендерим до монтирования на клиенте
+  if (!mounted) return null;
 
   return (
     <header id={scss.Header}>
@@ -34,8 +36,11 @@ const Header: FC = () => {
             </nav>
           )}
 
-          <label className={scss.hamburger}>
-            <input type="checkbox" />
+          {/* бургер */}
+          <button
+            className={scss.hamburger}
+            onClick={() => setIsMenuOpen(true)}
+          >
             <svg viewBox="0 0 32 32">
               <path
                 className={`${scss.line} ${scss["line-top-bottom"]}`}
@@ -48,7 +53,7 @@ const Header: FC = () => {
               ></path>
               <path className={scss.line} d="M7 16 27 16"></path>
             </svg>
-          </label>
+          </button>
 
           <button className={scss.search_btn}>
             <IoSearchOutline className={scss.search_icon} />
@@ -56,6 +61,33 @@ const Header: FC = () => {
           </button>
         </div>
       </div>
+
+      {/* Модалка меню */}
+      {isMenuOpen && (
+        <div className={scss.modal}>
+          <button
+            className={scss.close_btn}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <IoClose size={30} />
+          </button>
+
+          <nav className={scss.modal_nav}>
+            <Link href="#" onClick={() => setIsMenuOpen(false)}>
+              Interior
+            </Link>
+            <Link href="#" onClick={() => setIsMenuOpen(false)}>
+              About Us
+            </Link>
+            <Link href="#" onClick={() => setIsMenuOpen(false)}>
+              Menu
+            </Link>
+            <Link href="#" onClick={() => setIsMenuOpen(false)}>
+              Contacts
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
