@@ -1,125 +1,170 @@
 .Visit {
-  padding-block: 25px;
-  .content {
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
+  padding-block: 60px;
 
-    .left_visit {
-      max-width: 400px;
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+
+    /* LEFT */
+    .left {
+      max-width: 480px;
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 35px;
+
       .logo {
         display: flex;
         align-items: center;
-        justify-content: start;
-        gap: 25px;
+        gap: 20px;
+
         h2 {
-          font-family: "Shalimar";
-          font-size: clamp(2rem, 1.818rem + 0.91vw, 2.5rem);
-          font-weight: 100;
+          font-family: "Shalimar", cursive;
+          font-size: clamp(2rem, 1.8rem + 0.9vw, 2.6rem);
+          font-weight: 400;
           letter-spacing: 1.5px;
+          color: #ef272c;
         }
       }
-      h1 {
-        font-family: Silk Serif;
+
+      .title {
+        font-family: "Silk Serif", serif;
         font-weight: 600;
-        font-style: SemiBold;
-        font-size: clamp(2.188rem, 1.733rem + 2.27vw, 3.438rem);
-        line-height: clamp(2.188rem, 1.733rem + 2.27vw, 3.438rem);
+        font-size: clamp(2.2rem, 1.8rem + 2vw, 3.6rem);
+        line-height: 1.2;
+        color: #fff;
       }
-      .your {
+
+      .info {
         display: flex;
-        justify-content: start;
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
+
         span {
           color: #ef272c;
-          font-weight: 500;
-          font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+          font-weight: 600;
+          font-size: 1.1rem;
         }
+
         p {
-          font-weight: 500;
-          font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 1.5;
+          color: #dcdcdc;
         }
       }
-      .btn {
-        button {
+
+      .btnWrapper {
+        margin-top: 10px;
+
+        .btn {
+          position: relative;
           display: flex;
           align-items: center;
-          justify-content: space-between;
-          gap: 7px;
-          border: #ef272c 2px solid;
-          background: none;
-          font-size: clamp(0.625rem, 0.534rem + 0.45vw, 0.875rem);
-          padding: 5px 10px 8px;
-          color: white;
-          .icon_row {
-            font-size: 16px;
+          justify-content: center;
+          gap: 0.5rem;
+          font-size: 20px;
+          padding: 10px 20px;
+          background: transparent;
+          border: 2px solid #ef272c;
+          color: #fff;
+          font-weight: 400;
+          backdrop-filter: blur(6px);
+          z-index: 10;
+          cursor: pointer;
+          overflow: hidden;
+
+          .iconRow {
+            font-size: 18px;
+            transition: transform 0.3s ease;
+          }
+
+          &:hover {
+            background: #ef272c;
+            color: #fff;
+            box-shadow: 0 0 15px rgba(239, 39, 44, 0.5);
+
+            .iconRow {
+              transform: translateX(4px);
+            }
           }
         }
       }
     }
-    .right_visit {
-      background: #ef272c;
-      color: #1f2731;
-      max-width: clamp(21.875rem, 19.809rem + 10.33vw, 28.125rem);
+
+    /* RIGHT */
+    .right {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
       width: 100%;
-      align-items: start;
-      padding: 30px;
-      .block {
+
+      .contact {
+        background: #fff;
+        color: #1f2731;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        span {
+        gap: 15px;
+
+        .contactTitle {
+          font-weight: 600;
+          font-size: 1.3rem;
+          color: #ef272c;
+        }
+
+        .contactItem {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          font-size: 1rem;
           font-weight: 500;
-          font-size: 24px;
         }
-        .tell {
+
+        .social {
           display: flex;
-          align-items: center;
-          gap: 15px;
-        }
-        .icon {
-          font-size: 25px;
-          display: flex;
-          align-items: center;
           gap: 20px;
+          font-size: 1.5rem;
+
+          a {
+            color: #1f2731;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: #ef272c;
+            }
+          }
         }
       }
+
       .map {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: clamp(17.5rem, 16.054rem + 7.23vw, 21.875rem);
-        height: clamp(12.5rem, 11.467rem + 5.17vw, 15.625rem);
+        border-radius: 20px;
+        overflow: hidden;
+        width: 100%;
+        height: 320px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+        > div {
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }
-}
-@media (max-width: 700px) {
-  .Visit {
-    .content {
-      flex-direction: column;
-      .right_visit {
-        max-width: 600px;
-        width: 100%;
-        padding: 0px;
-        background: none;
-        .block {
-          display: none;
-        }
 
-        .map {
-          margin-top: 50px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          height: 350px;
-         
-        }
+  @media (max-width: 768px) {
+    .content {
+      // grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      .left,
+      .right {
+        max-width: 100%;
       }
     }
   }

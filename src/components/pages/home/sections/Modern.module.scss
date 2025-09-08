@@ -2,12 +2,14 @@
   .content {
     display: flex;
     flex-direction: column;
+
     .log {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 30px;
       padding-bottom: clamp(1.25rem, 0.568rem + 3.41vw, 3.125rem);
+
       h1 {
         font-family: "Shalimar";
         font-size: 40px;
@@ -15,13 +17,16 @@
         letter-spacing: 1.5px;
       }
     }
+
     .images {
       display: grid;
-      grid-template-columns: repeat(5, 426px); /* базовый размер */
+      grid-auto-flow: column; /* колонки автоматически */
+      grid-auto-columns: 426px; /* ширина каждой */
       grid-template-rows: repeat(5, 122px);
-      gap: 8px;
+      height: 100%;
+      gap: 18px;
 
-      overflow-x: auto; /* горизонтальный скролл */
+      overflow-x: auto;
       overflow-y: hidden;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
@@ -61,27 +66,19 @@
         grid-row-start: 1;
       }
 
-      .one,
-      .two,
-      .three,
-      .four,
-      .five {
-        scroll-snap-align: start;
-      }
-
       /* ---------- адаптация ---------- */
       @media (max-width: 1200px) {
-        grid-template-columns: repeat(5, 320px);
+        grid-auto-columns: 320px; /* вместо repeat */
         grid-template-rows: repeat(5, 90px);
       }
 
       @media (max-width: 768px) {
-        grid-template-columns: repeat(5, 240px);
+        grid-auto-columns: 240px;
         grid-template-rows: repeat(5, 70px);
       }
 
       @media (max-width: 480px) {
-        grid-template-columns: repeat(5, 180px);
+        grid-auto-columns: 180px;
         grid-template-rows: repeat(5, 60px);
       }
     }
