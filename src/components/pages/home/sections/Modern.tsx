@@ -19,7 +19,7 @@ const Modern = () => {
             <div className={scss.log}>
               <Image src={frame} alt="decor left" />
               <h1>Modern Interior</h1>
-              <Image src={frame2} alt="decor right" />
+              <Image src={frame2} alt="decor rightt" />
             </div>
 
             <div className={scss.images}>
